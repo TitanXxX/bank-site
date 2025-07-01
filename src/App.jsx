@@ -5,6 +5,8 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
+import { v4 as uuid } from 'uuid';
+
 import {About, Home, News} from "./pages";
 
 function App() {
@@ -17,8 +19,8 @@ function App() {
 		<Router>
 			<Navbar links = {links}/>
 			<Routes>
-				{links.map((r, key) =>
-					<Route key={key} path={r.path} element={r.element} />
+				{links.map((r) =>
+					<Route key={uuid()} path={r.path} element={r.element} />
 				)}
 			</Routes>
 		</Router>

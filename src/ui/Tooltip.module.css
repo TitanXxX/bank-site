@@ -1,0 +1,22 @@
+.tooltip[text]::after {
+	display: flex;
+	position: absolute;
+	content: attr(text);
+	color: var(--main-color);
+	font-size: 1.4em;
+	line-height: 1.4em;
+	float: top;
+	z-index: 100;
+	background: var(--main-bg-color);
+	color: var(--main-color);
+	border: 1px solid var(--main-color);
+	padding: 4px;
+	border-radius: 10px;
+	opacity: 0;
+	transition: opacity .2s;
+	pointer-events: none;
+}
+
+.tooltip[text]:hover:after {
+	opacity: 1;
+}

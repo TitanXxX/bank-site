@@ -1,13 +1,8 @@
-import styled from "styled-components";
-
-import {ReactComponent as RightArrowBtn} from "../../media/arrow-button.svg";
-
-export const MainWindow = styled.div`
+.main {
 	padding: 0 2%;
-`;
+}
 
-
-export const PhotoContainer = styled.div`
+.photo_container {
 	display: flex;
 	
 	align-items: flex-start;
@@ -22,10 +17,9 @@ export const PhotoContainer = styled.div`
 	border-radius: 20px;
 	overflow: hidden;
 	scroll-behavior: smooth;
-`;
+}
 
-
-export const Photo = styled.div`
+.photo {
 	width: 16%;
 	min-width: 100px;
 	height: 180px;
@@ -47,10 +41,9 @@ export const Photo = styled.div`
 		margin: 0;
 		padding: 2% 4%;
 	}
-`;
+}
 
-
-export const BtnContainer = styled.div`
+.btn_container {
 	display: flex;
 	
 	align-items: flex-start;
@@ -61,26 +54,25 @@ export const BtnContainer = styled.div`
 	
 	margin: 20px auto;
 	padding: 10px;
-	/*border: 2px solid black;*/
 	border-radius: 20px;
 	justify-content: center;
 	overflow: hidden;
-`;
+}
 
-export const ArrowBtn = styled(RightArrowBtn)`
+.arrow_btn {
 	width: 100px;
-	height 100px;
-	&.active {
-		color: #4d4dff;
-	}
+	height: 100px;
+	border: 2px solid black;
 	border-radius: 50%;
-`;
+	align-items: center;
+	& svg {
+		width: 80px;
+		height: 80px;
+		margin: 10px;
+	}
+}
 
-
-
-
-export const Button = styled.button`
-	//padding: 10px 30px;
+.button {
 	height: 100px;
 	cursor: default;
 	opacity: 0.6;
@@ -90,12 +82,9 @@ export const Button = styled.button`
 	border: 0;
 	border-radius: 50%;
 	transform-origin: 50% 50%;
-	&.left{
-		transform: rotate(180deg);
-	}
-	&.active{
-		opacity: 1;
-		cursor: pointer;
-	}
-`;
+}
 
+.button.active{
+	opacity: 1;
+	cursor: pointer;
+}
