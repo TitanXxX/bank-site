@@ -39,16 +39,16 @@ function GetPhoto(url) {
 
 function MoveScroll(scroller, side, changeActive) {
 	const position = Math.floor(scroller.current.scrollLeft);
-	const move = 200;
-	const pos_range = [0, 500];
-
+	const move = Math.floor(scroller.current.clientWidth / 4);//200;
+	const pos_range = [0, scroller.current.scrollWidth];
+	
 	if(side === -1){
 		changeActive(Math.max(pos_range[0], position - move) === pos_range[0] ? -1 : 0);
-		scroller.current.scrollTo(Math.max(pos_range[0], position - move), 0);
+		scroller.current.scrollTo(Math.max(0, position - move), 0);
 	} else{
-		changeActive(Math.min(pos_range[1], position + move) === pos_range[1] ? 1 : 0);
+		changeActive(Math.min(pos_range[1], position + move + scroller.current.clientWidth) === pos_range[1] ? 1 : 0);
 		scroller.current.scrollTo(Math.min(pos_range[1], position + move), 0);
-	}
+	}	
 }
 
 function ButtonGroup({scroller}) {
@@ -61,11 +61,13 @@ function ButtonGroup({scroller}) {
 					className = {classNames(styles.button, {[styles.active]: active !== side })}
 					onClick = {() => MoveScroll(scroller, side, setActive)}
 				>
-					{side === 1 ? (
-						<RightOutlined className={ styles.arrow_btn } />
-					) : (
-						<LeftOutlined className={ styles.arrow_btn } />
-					)}
+					<Tooltip text={ 'Кнопка перелистывания ' + (side === -1 ? 'влево' : 'вправо')}>
+						{side === 1 ? (
+							<RightOutlined className={ styles.arrow_btn } />
+						) : (
+							<LeftOutlined className={ styles.arrow_btn } />
+						)}
+					</Tooltip>
 				</button>
 			))}
 		</div>
@@ -74,18 +76,16 @@ function ButtonGroup({scroller}) {
 
 
 
-function News(){
+const News = () => {
 	const photos_ref = useRef(null);
 	const from = Math.floor(Math.random() * 5000);
-	const data = lodash.range(from, from + 20).map((i) => {
+	const data = lodash.range(from, from + 10).map((i) => {
 		return GetPhoto('https://jsonplaceholder.typicode.com/photos/' + i);
 	});
 
 	return (
 		<div className={ styles.main }>
-			<Tooltip text='HellO'>
-				<h1>Slider</h1>
-			</Tooltip>
+			<h1>Slider</h1>
 			<h1>Не забудь адаптировать</h1>
 			<div className={ styles.photo_container } ref={photos_ref}>
 				{data.map((d) => (
@@ -99,4 +99,5 @@ function News(){
 		</div>
 	);
 };
+
 export default News;

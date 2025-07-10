@@ -1,0 +1,62 @@
+
+.main {
+	display: flex;
+	margin: 30px;
+	padding: 30px;
+	justify-content: center;
+	flex-direction: column;
+
+	& h1 {
+		font-size: 4em;
+	}
+	& h2 {
+		color: #404040;
+	}
+
+	& h3 {
+		color: #606060;
+	}
+	
+	& * {
+		text-align: center;
+	}
+}
+
+
+.line {
+	width: 400px;
+	height: 0;
+	margin: auto;
+	border: 2px solid black;
+}
+
+.icons{
+	display: flex;
+	height: 204px;
+	justify-content: space-around;
+}
+
+.iconc {
+	display: flex;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 2px solid black;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	color: black;
+	width: 150px;
+	height: 150px;
+	& svg {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+
+
+
+

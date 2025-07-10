@@ -11,9 +11,9 @@ import {About, Home, News} from "./pages";
 
 function App() {
 	const links = [
-		{path: "/about", title: "About", element: <About />},
-		{path: "/", title: "Home", element: <Home />},
-		{path: "news", title: "News", element: <News />},
+		{path: "/", title: "Главная", element: <Home />},
+		{path: "news", title: "Новости", element: <News />},
+		{path: "/about", title: "О нас", element: <About />},
 	];
 	return (
 		<Router>

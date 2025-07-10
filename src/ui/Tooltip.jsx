@@ -5,10 +5,12 @@ import { v4 as uuid } from 'uuid';*/
 
 import styles from "./Tooltip.module.css";
 
+//const SetPos() {
+//}
 
 class Tooltip extends React.Component {
 	render(){
-		const { text, children } = this.props
+		const { text, children } = this.props;
 		return (
 			<div className={ styles.tooltip } text={text}>
 				{children}
