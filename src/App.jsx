@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./components/index.jsx";
+import { Navbar } from "./components";
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { v4 as uuid } from 'uuid';
 
-import {About, Home, News} from "./pages";
+import { About, Home, News } from "./pages";
 
 function App() {
 	const links = [
@@ -20,7 +20,7 @@ function App() {
 			<Navbar links = {links}/>
 			<Routes>
 				{links.map((r) =>
-					<Route key={uuid()} path={r.path} element={r.element} />
+					<Route key={ uuid() } path={ r.path } element={ r.element } />
 				)}
 			</Routes>
 		</Router>

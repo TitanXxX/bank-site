@@ -1,0 +1,28 @@
+:root {
+	--nav-text-color: #000;
+
+	--main-h2-color: #404040;
+	--main-h3-color: #606060;
+
+	--grid-card-color: #9b246d;
+	--flex-card-color: #2034a5;
+
+	--line-color: #000;
+	--svg-color: #000;
+
+	--shadow-color: rgba(0, 0, 0, 0.1);
+
+	--photo-background-color: rgb(87, 89, 80);
+	--photo-img-background-color: rgb(107, 99, 90);
+
+	--button-background-color: #fff;
+
+	--tooltip-background-color: #fff;
+	--tooltip-border-color: #000;
+	--tooltip-text-color: #000;
+
+	--rates-background-color: linear-gradient(#fff calc(100% - 120px), #777);
+	--rates-button-text-color: white;
+	--rates-title-color: #888;
+}
+

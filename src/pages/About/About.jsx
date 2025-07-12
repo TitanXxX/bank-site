@@ -1,7 +1,8 @@
 import React from "react";
+import { v4 as uuid } from 'uuid';
 
 import styles from './About.module.css';
-//import classNames from 'classnames';
+import { Tooltip } from '../../ui';
 
 import {
 	AndroidFilled,
@@ -39,9 +40,11 @@ const About = () => {
 					Наш сайт адаптирован для использования на различных устройствах:
 				</h2>
 				<div className={styles.icons}>
-					<IconPlace icon={PC} />
-					<IconPlace icon={AndroidFilled} />
-					<IconPlace icon={IOS} />
+					{[{icon: PC, text: 'Компьютер'}, {icon: AndroidFilled, text: 'Android'}, {icon: IOS, text: 'IOS'}].map((i) => (
+						<Tooltip key={ uuid() } text={ i.text }>
+							<IconPlace icon={ i.icon } />
+						</Tooltip>
+					))}
 				</div>
 			</div>
 		</div>
