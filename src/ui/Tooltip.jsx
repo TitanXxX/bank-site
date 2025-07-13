@@ -7,8 +7,8 @@ class Tooltip extends React.Component {
 		const { text, children } = this.props;
 		if(text) {
 			return (
-				<div className={ styles.tooltip } text={text}>
-					{children}
+				<div className={ styles.tooltip } text={ text }>
+					{ children }
 				</div>
 			);
 		} else {

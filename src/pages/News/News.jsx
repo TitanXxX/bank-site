@@ -119,7 +119,7 @@ const News = () => {
 			<div className={ styles.photo_container } ref={photos_ref}>
 				{data.map((d) => (
 					<div key={uuid()} className={ styles.photo }>
-						<img alt="" src={urls[Math.floor(Math.random() * 3)]} />
+						<img alt="" src={ urls[Math.floor(Math.random() * 3)] } />
 						<h4>{ d.title }</h4>
 						<p>{ d.text }</p>
 					</div>

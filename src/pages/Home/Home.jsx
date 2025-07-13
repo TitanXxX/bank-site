@@ -57,8 +57,8 @@ function GetRates(all){
 			});
 	}, [date]);
 
-	if (loading) return <div>Loading...</div>;
-	if (error) return <div>Error: {error}</div>;
+	if(loading) return <div>Loading...</div>;
+	if(error) return <div>Error: {error}</div>;
 
 	const rates = [
 		'USD', 'EUR', 'CAD',
@@ -66,8 +66,8 @@ function GetRates(all){
 	].concat(all ? Object.keys(data.rates) : []).filter( (el, idx, input) => input.indexOf(el) === idx );
 	
 	return (
-		<div>
-			<div  className={ styles.info }>
+		<div className={ styles.insides }>
+			<div className={ styles.info }>
 				Обновляется каждые 15 минут, {new Date(data.timestamp * 1000).toLocaleString()}
 				<br />
 				Последнее обновление: {date.toLocaleString()}
@@ -86,16 +86,15 @@ function GetRates(all){
 
 function ExchangeRate(){
 	const [all, setAll] = useState(false);
-
 	return (
 		<div className={ classNames(styles.rates_container, {[styles.all]: all}) }>
 			<h1>Курс обмена валют</h1>
 			<h3>Валюта</h3>
-			{GetRates(all)}
-			<Tooltip text='Показать/скрыть все валюты'>
+			{ GetRates(all) }
+			<Tooltip text={ (all ? 'Скрыть' : 'Показать') + ' все валюты' }>
 				<button
 					onClick={() => setAll(!all)}
-				>Все валюты</button>
+				>{ all ? 'Скрыть' : 'Все валюты' }</button>
 			</Tooltip>
 		</div>
 	);

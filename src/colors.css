@@ -1,4 +1,7 @@
 :root {
+	--app-header-color: #fff;
+	--app-link-color: #61dafb;
+
 	--nav-text-color: #000;
 
 	--main-h2-color: #404040;
